@@ -26,7 +26,7 @@ function Ball(x, y, velX, velY, color, size) {
 
 // define ball draw method
 
-Ball.prototype.draw = function() {
+Ball.prototype.draw = function(ctx) {
   ctx.beginPath();
   ctx.fillStyle = this.color;
   ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
@@ -95,7 +95,7 @@ function loop() {
   }
 
   for(var i = 0; i < balls.length; i++) {
-    balls[i].draw();
+    balls[i].draw(ctx);
     balls[i].update();
     balls[i].collisionDetect();
   }
